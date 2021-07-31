@@ -1,3 +1,3 @@
-# Upper Meibomian Glands
+# Upper Meibomian Glands images
 
-Insert here the images of Upper Meibomian Glands
+Insert here the Upper Meibomian Glands images
