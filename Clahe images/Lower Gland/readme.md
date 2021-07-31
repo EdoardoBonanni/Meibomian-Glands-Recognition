@@ -1,3 +1,3 @@
-# Lower Meibomian Glands
+# Lower Meibomian Glands images
 
-Insert here the images of Lower Meibomian Glands
+Insert here the Lower Meibomian Glands images
