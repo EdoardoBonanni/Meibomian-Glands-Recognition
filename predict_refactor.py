@@ -1,10 +1,10 @@
-import save_read_classifier as srcl
-import read_save_images as rs
-import folder_operations as fo
+from utils import save_read_classifier as srcl
+from utils import read_save_images as rs
+from utils import folder_operations as fo
 from sklearn import metrics
 import time
-import refactor_image as rf
-import matrix
+from utils import refactor_image as rf
+from utils import matrix
 import os
 
 def main():
@@ -68,9 +68,10 @@ def main():
     print("Meibomio perso %: ", 100 - (count1/count2 * 100))
     print("Parte non corrispondente al Meibomio selezionata %: ", count3/count4 * 100)
 
-    rec_img, rec_mask = rf.refactor_img(clahe_images[k], predict, 10)
-    rs.saveImage("Result/mask/rec_mask_All_10x10_coordinate of image 10", rec_mask)
-    rs.saveImage("Result/img/rec_img_All_10x10_coordinate of image 10", rec_img)
+    tile = 10
+    rec_img, rec_mask = rf.refactor_img(clahe_images[k], predict, tile)
+    rs.saveImage("Result/mask/rec_mask_All_10x10_coordinate of image" + name, rec_mask)
+    rs.saveImage("Result/img/rec_img_All_10x10_coordinate of image" + name, rec_img)
 
 if __name__ == "__main__":
     main()

@@ -1,9 +1,9 @@
-import folder_operations as fo
+from utils import folder_operations as fo
 import numpy as np
-import gabor
-import split_image
-import matrix
-import refactor_image as rf
+from utils import gabor
+from utils import split_image
+from utils import matrix
+from utils import refactor_image as rf
 from copy import deepcopy
 
 def main():
@@ -11,7 +11,7 @@ def main():
     labels = []
     x = []
     y = []
-    isUpperGland = False
+    isUpperGland = True
     create_matrix = False
 
     if isUpperGland:
@@ -20,7 +20,15 @@ def main():
         clahe_images, masks, filenames = fo.read_Masks_CLAHE_Low()
 
     # select the image that you want create the matrix
-    start = 0
+    k = 0
+    name = '10 CLAHE'
+    for filename in filenames:
+        if filename == name:
+            print("Name:", filename, "-", "index:", k)
+            break
+        k = k + 1
+
+    start = k
     step = 1
     stop = start + 1
     tile = 10
@@ -62,15 +70,11 @@ def main():
         name = filenames[i].replace(' CLAHE', '')
         if create_matrix:
             if isUpperGland:
-                name = "Matrices/Single/matrix_svm_" + name
-                                     + "_" + str(tile) + "x"
-                                     + str(tile) + "_coordinate_up"
-                matrix.create_matrix(cov_matrix, labels, name)
+                name_file = "Matrices/Single/matrix_svm_" + name + "_" + str(tile) + "x" + str(tile) + "_coordinate_up"
+                matrix.create_matrix(cov_matrix, labels, name_file)
             else:
-                name = "Matrices/Single/matrix_svm_" + name
-                                     + "_" + str(tile) + "x"
-                                     + str(tile) + "_coordinate_low"
-                matrix.create_matrix(cov_matrix, labels, name)
+                name_file = "Matrices/Single/matrix_svm_" + name + "_" + str(tile) + "x" + str(tile) + "_coordinate_low"
+                matrix.create_matrix(cov_matrix, labels, name_file)
     print('fine')
 
 

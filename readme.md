@@ -94,6 +94,16 @@ Parametri Gabor filter:
 
 folder *utils* contiene le funzioni:
 	
-* `balance_dataset.py`:  prova
-* `folder_operations.py`:  prova
+* `balance_dataset.py`: file che contiene la funzione che permette di bilanciare il dataset
+* `folder_operations.py`: file che contiene le funzioni che permettono di leggere le maschere e le immagini dalle cartelle o creare le maschere
+* `gabor.py`: file che contiene la funzioni che permettono di creare i kernel di gabor e di applicare i filtri alle immagini
+* `matrix.py`: file che contiene la funzioni che permettono di creare e leggere le funzioni '.mat'
+* `read_save_images.py`: file che contiene le funzioni che permettono di leggere, salvare e visualizzae le immagini
+* `refactor_image.py`: file che contiene la funzione che permette di ricostruire l'immagine dalle feature, la funzione che ricrea l'immagine originale dall'immagine ritagliata e la funzione che determina le coordinate di un blocco
+* `save_read_classifier.py`:  file che contiene la funzioni che permettono di leggere e salvare i classificatori
+* `split_image.py`: file che contiene la funzione che permette di dividere l'immagine in blocchi e la funzione che calcola la label di ogni blocco
+* `superpixel.py`: file che contiene le funzioni che permettono di creare i superpixel di un'immagine e di selezionare i punti di essa
+
+
+
 	

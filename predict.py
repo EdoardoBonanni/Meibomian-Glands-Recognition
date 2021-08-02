@@ -1,13 +1,7 @@
-import save_read_classifier as srcl
-import read_save_images as rs
-import superpixel, gabor, split_image
-import numpy as np
-import folder_operations as fo
+from utils import save_read_classifier as srcl
 from sklearn import metrics
 import time
-from sklearn.decomposition import PCA
-import refactor_image as rf
-import matrix
+from utils import matrix
 import thundersvm
 import os
 import warnings

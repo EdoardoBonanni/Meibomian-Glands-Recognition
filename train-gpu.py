@@ -3,8 +3,8 @@ from sklearn.decomposition import PCA
 from sklearn.pipeline import make_pipeline
 from sklearn.preprocessing import StandardScaler
 import time
-import matrix
-import save_read_classifier as srcl
+from utils import matrix
+from utils import save_read_classifier as srcl
 import thundersvm
 from sklearn.model_selection import GridSearchCV
 import os

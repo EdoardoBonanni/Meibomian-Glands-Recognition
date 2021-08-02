@@ -1,11 +1,11 @@
-import folder_operations as fo
+from utils import folder_operations as fo
 import numpy as np
-import gabor
-import split_image
+from utils import gabor
+from utils import split_image
 from matplotlib import pyplot as plt
-import refactor_image as rf
-import matrix
-import balance_dataset
+from utils import refactor_image as rf
+from utils import matrix
+from utils import balance_dataset as bd
 from copy import deepcopy
 
 def main():
@@ -25,7 +25,7 @@ def main():
     step = 1
     stop = len(clahe_images)
     tile = 10
-    balanced = 30
+    balance_dataset = 30
     for i in range(start, stop, step):
         print(filenames[i], i, stop)
         crop_mask = split_image.tile(masks[i], tile)
@@ -52,7 +52,7 @@ def main():
                 y_array = deepcopy(y)
             box_features.append(crop_feature)
         if stop - start > 1:
-            box_features, label, x_array, y_array = balance_dataset.balance_data_coordinate(box_features, label, balanced, x_array, y_array)
+            box_features, label, x_array, y_array = bd.balance_data_coordinate(box_features, label, balance_dataset, x_array, y_array)
         labels.append(label)
         for k in range(0, len(box_features[0])):
             cube = []
@@ -70,15 +70,11 @@ def main():
 
     if create_matrix:
         if isUpperGland:
-            name = "Matrices/matrix_svm_" + str(int((stop - start)/step))
-                                + "Elements_" + str(tile) + "x"
-                                + str(tile) + "_coordinate_Up"
-            matrix.create_matrix(cov_matrix, labels, name)
+            name_file = "Matrices/matrix_svm_" + str(int((stop - start)/step)) + "Elements_" + str(tile) + "x" + str(tile) + "_coordinate_Up"
+            matrix.create_matrix(cov_matrix, labels, name_file)
         else:
-            name = "Matrices/matrix_svm_" + str(int((stop - start) / step))
-                                + "Elements_" + str(tile) + "x"
-                                + str(tile) + "_coordinate_Low"
-            matrix.create_matrix(cov_matrix, labels, name)
+            name_file = "Matrices/matrix_svm_" + str(int((stop - start) / step)) + "Elements_" + str(tile) + "x" + str(tile) + "_coordinate_Low"
+            matrix.create_matrix(cov_matrix, labels, name_file)
     print('fine')
 
 if __name__ == "__main__":
