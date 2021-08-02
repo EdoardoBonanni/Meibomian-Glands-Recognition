@@ -94,5 +94,6 @@ Parametri Gabor filter:
 
 folder *utils* contiene le funzioni:
 	
-	* `balance_dataset.py`
+* `balance_dataset.py`:  prova
+* `folder_operations.py`:  prova
 	
