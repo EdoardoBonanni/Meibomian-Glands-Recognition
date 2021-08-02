@@ -10,7 +10,35 @@ Per riprodurre i risultati ottenuti è necessario inserire il materiale nelle ca
 
 Necessario un ambiente di sviluppo che supporta Python3 e si consiglia l'installazione di ThunderSVM, in un ambiente che supporta anche CUDA, per eseguire la classificazione utilizzando la GPU e riutilizzare i classificatori precalcolati.
 		
-## Code
+## Gabor parameters
+
+Si indica con `+` eventuali parametri modificabili.
+Parametri Gabor filter:
+
+	+ num_theta: represents the orientation of the normal to the parallel stripes and, given that the shape is vertical in most cases, we have to use few orientation otherwise it could give a strong response even for lashes (default: 2).
+	
+	+ gabor_ker_size: that is a Gaussian kernel modulated by a complex harmonic function and it would be bigger to identify a wide area from the image (default: 129).
+	
+	+ lam:  represents the wavelength of the sinusoidal factor (default: 1.01, 1.015).
+	
+	+ sigma: is the sigma/standard deviation of the Gaussian envelope (default: gabor_ker_size/5).
+	
+	+ psi: is the phase offset (default: π/2).
+	
+	+ gamma: is the spatial aspect ratio and specifies the ellipticity of the support of the Gabor function (default: 1.5).
+
+
+### Code
+
+`create_mask.py`: permette di selezionare a mano l'area della ghiandola e generare la relativa maschera.
+		 
+	- Settare la variabile "isUpperGland" a True se si vuole creare le maschere per le ghiandole superiori, False altrimenti.
+	
+	- Settare la variabile "create_mask_matrix" a True se si vuole confermare la creazione delle matrici contenenti le maschere, False altrimenti.
+	
+	- Settare la variabile "create_mask_image" a True se si vuole confermare la creazione delle immagini delle maschere, False altrimenti.
+	
+	+ n_segments: numero di segmenti presenti nell'immagine cliccabile a mano che permette di generare la maschera (default: 180).
 
 `main.py`: permette di creare le matrici di covarianza che verranno successivamente splittate in train e test per generare il dataset.
 		 
@@ -19,6 +47,10 @@ Necessario un ambiente di sviluppo che supporta Python3 e si consiglia l'install
 	- Settare la variabile "create_matrix" a True se si vuole confermare la creazione delle matrici di covarianza, False altrimenti.
 	
 	- Cambiare la variabile name se si vuole modificare il nome del file risultante e non si vuole sovrascrivere i risultati precedenti.
+	
+	+ tile: dimensione delle celle della griglia (default: 10)
+	
+	+ balance_dataset: percentuale che indica il bilanciamento di esempi negativi/positivi per evitare un dataset sbilanciato (default: 30%)
 
 `main-single.py`: permette di creare la matrice di covarianza di una singola immagine, necessario se si vuole predirre l'area della ghiandola in un'immagine:
 	
