@@ -1,6 +1,6 @@
 # Meibomian-Glands-Recognition
 
-introduzione
+Il progetto ha l'obiettivo di riconoscere l'area delle ghiandole superiori e inferiori del meibomio per un insieme di immagini fornite.
 
 ## Preparazione
 
