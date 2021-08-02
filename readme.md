@@ -92,3 +92,7 @@ Parametri Gabor filter:
 	
 	- Cambiare il nome dell'immagine predetta e della relativa maschera in base alla predizione fatta e dell'immagine utilizzta.
 
+folder *utils* contiene le funzioni:
+	
+	* `balance_dataset.py`
+	
