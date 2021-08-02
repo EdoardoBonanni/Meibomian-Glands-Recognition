@@ -19,7 +19,7 @@ Parametri Gabor filter:
 	
 	+ gabor_ker_size: that is a Gaussian kernel modulated by a complex harmonic function and it would be bigger to identify a wide area from the image (default: 129).
 	
-	+ lam:  represents the wavelength of the sinusoidal factor (default: 1.01, 1.015).
+	+ lam: represents the wavelength of the sinusoidal factor (default: 1.01, 1.015).
 	
 	+ sigma: is the sigma/standard deviation of the Gaussian envelope (default: gabor_ker_size/5).
 	
@@ -46,7 +46,7 @@ Parametri Gabor filter:
 	
 	- Settare la variabile "create_matrix" a True se si vuole confermare la creazione delle matrici di covarianza, False altrimenti.
 	
-	- Cambiare la variabile name se si vuole modificare il nome del file risultante e non si vuole sovrascrivere i risultati precedenti.
+	- Cambiare la variabile 'name_file' se si vuole modificare il nome del file risultante e non si vuole sovrascrivere i risultati precedenti.
 	
 	+ tile: dimensione delle celle della griglia (default: 10)
 	
@@ -58,9 +58,9 @@ Parametri Gabor filter:
 	
 	- Settare la variabile "create_matrix" a True se si vuole confermare la creazione delle matrice di covarianza, False altrimenti.
 	
-	- Cambiare la variabile name se si vuole modificare il nome del file risultante e non si vuole sovrascrivere i risultati precedenti.
+	- Cambiare la variabile 'name_file' se si vuole modificare il nome del file risultante e non si vuole sovrascrivere i risultati precedenti.
 	
-	- Selezionare attraverso la variabile ... l'immagine di cui vogliamo fare la predizione. 
+	- Scrivere il nome dell'immagine di cui vogliamo fare la predizione nella variabile 'name'. 
 	
 `train-gpu.py`: funzione che permette di salvare il classificatore SVM in grado di riconoscere l'area delle ghiandole a partire dalle matrici di covarianza che formano il dataset di train:
 
