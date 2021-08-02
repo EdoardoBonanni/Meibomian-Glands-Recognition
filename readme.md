@@ -52,7 +52,7 @@ Parametri Gabor filter:
 	
 	+ balance_dataset: percentuale che indica il bilanciamento di esempi negativi/positivi per evitare un dataset sbilanciato (default: 30%)
 
-`main-single.py`: permette di creare la matrice di covarianza di una singola immagine, necessario se si vuole predirre l'area della ghiandola in un'immagine:
+`main-single.py`: permette di creare la matrice di covarianza di una singola immagine, necessario se si vuole predirre l'area della ghiandola di un'immagine:
 	
 	- Settare la variabile "isUpperGland" a True se si vuole predirre l'area di un'immagine di una ghiandola superiore, False altrimenti.
 	
@@ -66,7 +66,7 @@ Parametri Gabor filter:
 
 	- Settare la variabile "selectGPU" in base alla GPU da utilizzare.
 	
-	- Settare la variabile "datasetNotCreate" a True se ancora non è stato fatto il train_test_split e quindi generato il dataset a partire dalla matrice di covarianza, False altrimenti.
+	- Settare la variabile "datasetNotCreate" a True se ancora non è stato fatto il train_test_split e quindi non si è ancora generato il dataset a partire dalla matrice di covarianza, False altrimenti.
 	
 	- Settare la variabile "isUpperGland" a True se si vuole fare la classificazione su immagini della ghiandola superiore, False altrimenti.
 	
@@ -74,7 +74,7 @@ Parametri Gabor filter:
 	
 	- Cambiare il kernel del SVM se si vuole utilizzare uno diverso ('rbf' predefinito).
 	
-	- Cambiare il nome del file relativo al classificatore per non sovrascrivere i risultati ottenuti
+	- Cambiare il nome del file relativo al classificatore per non sovrascrivere i risultati ottenuti.
 	
 `predict.py`: funzione che permette di predirre l'area delle ghiandole del dataset di test, genera come output un log contenente le accuracy ottenute.
 
@@ -84,25 +84,25 @@ Parametri Gabor filter:
 	
 	- Cambiare il nome del file di log in base alla predizione fatta.
 	
-`predict_refactor.py`: funzione che permette predirre l'area delle ghiandole di un'immagine richiesta, genera come output l'immagine predetta e la relativa maschera.
+`predict_refactor.py`: funzione che permette di predirre l'area delle ghiandole di un'immagine richiesta, genera come output l'immagine predetta e la relativa maschera.
 
 	- Settare la variabile "selectGPU" in base alla GPU da utilizzare.
 	
 	- Settare la variabile "isUpperGland" a True se si vuole identificare l'area di un'immagine della ghiandola superiore, False altrimenti.
-	
-	- Cambiare il nome dell'immagine predetta e della relativa maschera in base alla predizione fatta e dell'immagine utilizzta.
-
+    
+    - Scrivere il nome dell'immagine di cui vogliamo fare la predizione nella variabile 'name'.
+  
 folder *utils* contiene le funzioni:
 	
-* `balance_dataset.py`: file che contiene la funzione che permette di bilanciare il dataset
-* `folder_operations.py`: file che contiene le funzioni che permettono di leggere le maschere e le immagini dalle cartelle o creare le maschere
-* `gabor.py`: file che contiene la funzioni che permettono di creare i kernel di gabor e di applicare i filtri alle immagini
-* `matrix.py`: file che contiene la funzioni che permettono di creare e leggere le funzioni '.mat'
-* `read_save_images.py`: file che contiene le funzioni che permettono di leggere, salvare e visualizzae le immagini
-* `refactor_image.py`: file che contiene la funzione che permette di ricostruire l'immagine dalle feature, la funzione che ricrea l'immagine originale dall'immagine ritagliata e la funzione che determina le coordinate di un blocco
-* `save_read_classifier.py`:  file che contiene la funzioni che permettono di leggere e salvare i classificatori
-* `split_image.py`: file che contiene la funzione che permette di dividere l'immagine in blocchi e la funzione che calcola la label di ogni blocco
-* `superpixel.py`: file che contiene le funzioni che permettono di creare i superpixel di un'immagine e di selezionare i punti di essa
+* `balance_dataset.py`: file che contiene la funzione che permette di bilanciare il dataset.
+* `folder_operations.py`: file che contiene le funzioni che permettono di leggere le maschere e le immagini dalle cartelle e di creare le maschere.
+* `gabor.py`: file che contiene la funzioni che permettono di creare i kernel di gabor e di applicare i filtri alle immagini.
+* `matrix.py`: file che contiene la funzioni che permettono di creare e leggere le matrici '.mat'.
+* `read_save_images.py`: file che contiene le funzioni che permettono di leggere, salvare e visualizzare le immagini.
+* `refactor_image.py`: file che contiene la funzione che permette di ricostruire l'immagine dalle feature, la funzione che ricrea l'immagine originale dall'immagine ritagliata e la funzione che determina le coordinate di un blocco.
+* `save_read_classifier.py`:  file che contiene la funzioni che permettono di leggere e salvare i classificatori.
+* `split_image.py`: file che contiene la funzione che permette di dividere l'immagine in blocchi e la funzione che calcola la label di ogni blocco.
+* `superpixel.py`: file che contiene le funzioni che permettono di creare i superpixel di un'immagine e di selezionare i superpixel a mano.
 
 
 
