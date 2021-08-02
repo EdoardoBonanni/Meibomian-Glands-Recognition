@@ -12,7 +12,7 @@ Necessario un ambiente di sviluppo che supporta Python3 e si consiglia l'install
 		
 ## Code
 
-main.py: permette di creare le matrici di covarianza che verranno successivamente splittate in train e test per generare il dataset.
+`main.py`: permette di creare le matrici di covarianza che verranno successivamente splittate in train e test per generare il dataset.
 		 
 	- Settare la variabile "isUpperGland" a True se si vuole creare le matrici di covarianza per le ghiandole superiori, False altrimenti.
 	
@@ -20,7 +20,7 @@ main.py: permette di creare le matrici di covarianza che verranno successivament
 	
 	- Cambiare la variabile name se si vuole modificare il nome del file risultante e non si vuole sovrascrivere i risultati precedenti.
 
-main-single.py: permette di creare la matrice di covarianza di una singola immagine, necessario se si vuole predirre l'area della ghiandola in un'immagine:
+`main-single.py`: permette di creare la matrice di covarianza di una singola immagine, necessario se si vuole predirre l'area della ghiandola in un'immagine:
 	
 	- Settare la variabile "isUpperGland" a True se si vuole predirre l'area di un'immagine di una ghiandola superiore, False altrimenti.
 	
@@ -30,7 +30,7 @@ main-single.py: permette di creare la matrice di covarianza di una singola immag
 	
 	- Selezionare attraverso la variabile ... l'immagine di cui vogliamo fare la predizione. 
 	
-train-gpu.py: funzione che permette di salvare il classificatore SVM in grado di riconoscere l'area delle ghiandole a partire dalle matrici di covarianza che formano il dataset di train:
+`train-gpu.py`: funzione che permette di salvare il classificatore SVM in grado di riconoscere l'area delle ghiandole a partire dalle matrici di covarianza che formano il dataset di train:
 
 	- Settare la variabile "selectGPU" in base alla GPU da utilizzare.
 	
@@ -44,7 +44,7 @@ train-gpu.py: funzione che permette di salvare il classificatore SVM in grado di
 	
 	- Cambiare il nome del file relativo al classificatore per non sovrascrivere i risultati ottenuti
 	
-predict.py: funzione che permette di predirre l'area delle ghiandole del dataset di test, genera come output un log contenente le accuracy ottenute.
+`predict.py`: funzione che permette di predirre l'area delle ghiandole del dataset di test, genera come output un log contenente le accuracy ottenute.
 
 	- Settare la variabile "selectGPU" in base alla GPU da utilizzare.
 	
@@ -52,7 +52,7 @@ predict.py: funzione che permette di predirre l'area delle ghiandole del dataset
 	
 	- Cambiare il nome del file di log in base alla predizione fatta.
 	
-predict_refactor.py: funzione che permette predirre l'area delle ghiandole di un'immagine richiesta, genera come output l'immagine predetta e la relativa maschera.
+`predict_refactor.py`: funzione che permette predirre l'area delle ghiandole di un'immagine richiesta, genera come output l'immagine predetta e la relativa maschera.
 
 	- Settare la variabile "selectGPU" in base alla GPU da utilizzare.
 	
