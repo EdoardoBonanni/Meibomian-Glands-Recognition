@@ -97,7 +97,7 @@ Gabor filter parameters:
 	
 	- Set the *isUpperGland* variable to True if you want to identify the upper gland area of ​​an image, False otherwise.
     
-    	- Write the name of the image that we want to predict in the variable *name*.
+    - Write the name of the image that we want to predict in the variable *name*.
 
 ### Utils
   
