@@ -99,11 +99,11 @@ Gabor filter parameters:
     
     - Write the name of the image that we want to predict in the variable "name".
 
-### Utils
+### Utils folder
   
-The *utils* folder contains the functions:
+It includes the following files:
 	
-* `balance_dataset.py`: it contains the function that allows to launch the dataset.
+* `balance_dataset.py`: it contains the function that allows to balance the dataset.
 
 * `folder_operations.py`: it contains the functions that allow to read the masks and images from the folders and create the masks.
 
