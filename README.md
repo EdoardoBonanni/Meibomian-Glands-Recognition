@@ -2,11 +2,11 @@
 
 The project aims to recognize upper and lower meibomian glands area for a provided images' dataset.
 
-## Preparazione
+## Material Preparation
 
 To reproduce the results obtained, it is necessary to insert the material in the appropriate folders in which, in addition to the masks and images of the glands, there is also the pre-calculated classifiers and the dataset used to generate them.
 
-## Prerequisiti
+## Prerequisites
 
 * A development environment that supports Python3 is required
 
@@ -18,7 +18,7 @@ To reproduce the results obtained, it is necessary to insert the material in the
 
 `-` means any modifiable variables.
 		
-## Gabor filter parameters
+## Gabor Filter Parameters
 
 Gabor filter parameters:
 
