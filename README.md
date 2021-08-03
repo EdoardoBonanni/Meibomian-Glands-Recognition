@@ -22,22 +22,22 @@ To reproduce the results obtained, it is necessary to insert the material in the
 
 Gabor filter parameters:
 
-	+ num_theta: represents the orientation of the normal to the parallel stripes and, given that the shape is vertical in most cases, we have to use few orientation otherwise it could give a strong response even for lashes (**default: 2**).
+	+ num_theta: represents the orientation of the normal to the parallel stripes and, given that the shape is vertical in most cases, we have to use few orientation otherwise it could give a strong response even for lashes (default: 2).
 	
-	+ gabor_ker_size: that is a Gaussian kernel modulated by a complex harmonic function and it would be bigger to identify a wide area from the image (**default: 129**).
+	+ gabor_ker_size: that is a Gaussian kernel modulated by a complex harmonic function and it would be bigger to identify a wide area from the image (default: 129).
 	
-	+ lam: represents the wavelength of the sinusoidal factor (**default: 1.01, 1.015**).
+	+ lam: represents the wavelength of the sinusoidal factor (default: 1.01, 1.015).
 	
-	+ sigma: is the sigma/standard deviation of the Gaussian envelope (**default: gabor_ker_size/5**).
+	+ sigma: is the sigma/standard deviation of the Gaussian envelope (default: gabor_ker_size/5).
 	
-	+ psi: is the phase offset (**default: π/2**).
+	+ psi: is the phase offset (default: π/2).
 	
-	+ gamma: is the spatial aspect ratio and specifies the ellipticity of the support of the Gabor function (**default: 1.5**).
+	+ gamma: is the spatial aspect ratio and specifies the ellipticity of the support of the Gabor function (default: 1.5).
 
 
 ### Code
 
-`create_mask.py`: it allows to select the area of ​​the gland by hand and generate the relative mask.
+`create_mask.py`: it allows to select the area of the gland by hand and generate the relative mask.
 		 
 	- Set the *isUpperGland* variable to True if you want to create masks for the upper glands, False otherwise.
 	
