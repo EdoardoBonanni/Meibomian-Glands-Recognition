@@ -39,21 +39,21 @@ Gabor filter parameters:
 
 `create_mask.py`: it allows to select the area of the gland by hand and generate the relative mask.
 		 
-	- Set the *isUpperGland* variable to True if you want to create masks for the upper glands, False otherwise.
+	- Set the "isUpperGland" variable to True if you want to create masks for the upper glands, False otherwise.
 	
-	- Set the *create_mask_matrix* variable to True if you want to confirm the creation of the matrices containing the masks, False otherwise.
+	- Set the "create_mask_matrix" variable to True if you want to confirm the creation of the matrices containing the masks, False otherwise.
 	
-	- Set the *create_mask_image* variable to True if you want to confirm the creation of the masks images, False otherwise.
+	- Set the "create_mask_image" variable to True if you want to confirm the creation of the masks images, False otherwise.
 	
 	+ n_segments: number of segments present in the image that can be clicked by hand and which allows us to generate the mask (default: 180).
 
 `main.py`: it allows to create the covariance matrices that will be later split into train and test to generate the dataset.
 		 
-	- Set the *isUpperGland* variable to True if you want to create covariance matrices for the upper glands, False otherwise.
+	- Set the "isUpperGland" variable to True if you want to create covariance matrices for the upper glands, False otherwise.
 	
-	- Set the *create_matrix* variable to True if you want to confirm the creation of the covariance matrices, False otherwise.
+	- Set the "create_matrix" variable to True if you want to confirm the creation of the covariance matrices, False otherwise.
 	
-	- Modify the *name_file* variable if you want to change the resulting file name and to not overwrite the previous results.
+	- Modify the "name_file" variable if you want to change the resulting file name and to not overwrite the previous results.
 	
 	+ tile: size of the grid cells (default: 10).
 	
@@ -61,43 +61,43 @@ Gabor filter parameters:
 
 `main-single.py`: it allows to create the covariance matrix of a single image, necessary if you want to predict the gland's area of an image:
 	
-	- Set the *isUpperGland* variable to True if you want to predict the upper gland area of ​​an image, False otherwise.
-	
-	- Set the *create_matrix* variable to True if you want to confirm the creation of the covariance matrix, False otherwise.
-	
-	- Modify the *name_file* variable if you want to change the resulting file name and to not overwrite the previous results.
-	
-	- Write the name of the image that we want to predict in the variable *name*. 
-	
-`train-gpu.py`: function that allows to save the SVM classifier that recognizes the area of ​​the glands starting from the covariance matrices (they form the train set):
+	- Set the "isUpperGland" variable to True if you want to predict the upper gland area of an image, False otherwise.
 
-	- Set the *selectGPU* variable according to the GPU to be used.
+	- Set the "create_matrix" variable to True if you want to confirm the creation of the covariance matrix, False otherwise.
 	
-	- Set the *datasetNotCreate* variable to True if the train_test_split has not yet been done and therefore the dataset has not yet been generated from the covariance matrix, False otherwise.
+	- Modify the "name_file" variable if you want to change the resulting file name and to not overwrite the previous results.
 	
-	- Set the variable *isUpperGland* to True if you want to do the classification on upper glands images, False otherwise.
+	- Write the name of the image that we want to predict in the variable "name". 
 	
-	- Set the *useBestParam* variable to True if you want to do the classification through the **GridSearchCV** function which allows to find the best parameters for the classifier, False otherwise.
+`train-gpu.py`: function that allows to save the SVM classifier that recognizes the area of the glands starting from the covariance matrices (they form the train set):
+
+	- Set the "selectGPU" variable according to the GPU to be used.
 	
-	- Modify SVM kernel if you want to use a different one (default: *rbf*).
+	- Set the "datasetNotCreate" variable to True if the train_test_split has not yet been done and therefore the dataset has not yet been generated from the covariance matrix, False otherwise.
+	
+	- Set the variable "isUpperGland" to True if you want to do the classification on upper glands images, False otherwise.
+	
+	- Set the "useBestParam" variable to True if you want to do the classification through the GridSearchCV function which allows to find the best parameters for the classifier, False otherwise.
+	
+	- Modify SVM kernel if you want to use a different one (default: "rbf").
 	
 	- Modify the filename for the classifier so as not to overwrite the results obtained.
 	
 `predict.py`: function that allows to predict the glands' area of the test set and it generates as output a log file containing the accuracy obtained.
 
-	- Set the *selectGPU* variable according to the GPU to be used.
+	- Set the "selectGPU" variable according to the GPU to be used.
 	
-	- Set the *isUpperGland* variable to True if you want to predict the upper glands, False otherwise.
+	- Set the "isUpperGland" variable to True if you want to predict the upper glands, False otherwise.
 	
 	- Modify the name of the log file according to the prediction obtained.
 	
 `predict_refactor.py`: function that allows to predict the glands' area of a requested image and it generates as output the predicted image and the relative mask.
 
-	- Set the *selectGPU* variable according to the GPU to be used.
+	- Set the "selectGPU" variable according to the GPU to be used.
 	
-	- Set the *isUpperGland* variable to True if you want to identify the upper gland area of ​​an image, False otherwise.
+	- Set the "isUpperGland" variable to True if you want to identify the upper gland area of an image, False otherwise.
     
-    - Write the name of the image that we want to predict in the variable *name*.
+    - Write the name of the image that we want to predict in the variable "name".
 
 ### Utils
   
@@ -109,7 +109,7 @@ The *utils* folder contains the functions:
 
 * `gabor.py`: it contains the functions that allow to create gabor kernels and apply filters to the images.
 
-* `matrix.py`: it contains the functions that allow to create and read '.mat' matrices.
+* `matrix.py`: it contains the functions that allow to create and read ".mat" matrices.
 
 * `read_save_images.py`: it contains the functions that allow to read, save and show images.
 
