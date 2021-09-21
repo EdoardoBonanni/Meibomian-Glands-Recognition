@@ -7,22 +7,34 @@ def read_TIFF(file):
     gray_image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
     return gray_image
 
-def create_CLAHE():
-    imagesTIFF = []
-    imagesCLAHE = []
-    filenames = []
+def create_CLAHE(path):
     clahe8x8 = cv2.createCLAHE(clipLimit=40, tileGridSize=(8, 8))
-    with os.scandir('TIFF images/') as entries:
+    founded = False
+    with os.scandir(path) as entries:
         for entry in entries:
+            founded = False
             if ('.TIFF' in entry.name):
                 entryname = entry.name
                 entryname = entryname.replace('.TIFF', '')
-                image = read_TIFF('TIFF images/' + entry.name)
-                cl = clahe8x8.apply(image)
-                imagesTIFF.append(image)
-                imagesCLAHE.append(cl)
-                filenames.append('Clahe images/' + entryname + ' CLAHE')
-    return imagesTIFF, imagesCLAHE, filenames
+                name = 'Clahe images/' + entryname + ' CLAHE.jpg'
+                nameClahe = entryname + ' CLAHE.jpg'
+
+                with os.scandir('Clahe images/Upper Gland/') as entriesUpperGland:
+                    for entryUpperGland in entriesUpperGland:
+                        if ('.jpg' in entryUpperGland.name):
+                            if nameClahe == entryUpperGland.name:
+                                founded = True
+
+                with os.scandir('Clahe images/Lower Gland/') as entriesLowerGland:
+                    for entryLowerGland in entriesLowerGland:
+                        if ('.jpg' in entryLowerGland.name):
+                            if nameClahe == entryLowerGland.name:
+                                founded = True
+
+                if founded == False:
+                    image = read_TIFF(path + entry.name)
+                    cl = clahe8x8.apply(image)
+                    cv2.imwrite(name, cl)
 
 def read_CLAHE_Up():
     imagesCLAHE = []
