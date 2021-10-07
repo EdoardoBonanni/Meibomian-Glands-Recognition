@@ -12,7 +12,6 @@ def balance_data_coordinate(box_features, label, value, x, y):
         if label[index] == 0:
             for j in range(0, len(box_features)):
                 box_features[j].pop(index)
-                #print('len box features', j, ':', len(box_features[j]))
             x.pop(index)
             y.pop(index)
             label.pop(index)

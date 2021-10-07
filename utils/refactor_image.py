@@ -28,8 +28,6 @@ def refactor_img(img, labels, dimKernel):
                         rec_mask[k + (cnt_row * dimKernel)][j + (cnt_col * dimKernel)] = 255
 
             cnt_row += 1
-    #rs.visualizeImage(rec_mask)
-    #rs.visualizeImage(rec_img)
     return rec_img, rec_mask
 
 def reconstruct_feature(shape0, shape1, feature):
