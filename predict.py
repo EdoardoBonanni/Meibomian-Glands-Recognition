@@ -21,10 +21,10 @@ def main():
     # change kernel type if you want
     if isUpperGland:
         clf = srcl.loadSVM("classifier/classifier_All_10x10_coordinate_Up")
-        test_cov, test_labels = matrix.read_matrix('Dataset/test_low')
+        test_cov, test_labels = matrix.read_matrix('Dataset/test_up')
     else:
         clf = srcl.loadSVM("classifier/classifier_All_10x10_coordinate_Low")
-        test_cov, test_labels = matrix.read_matrix('Dataset/test_up')
+        test_cov, test_labels = matrix.read_matrix('Dataset/test_low')
 
     test_labels = test_labels[0]
 

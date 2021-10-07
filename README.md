@@ -37,10 +37,6 @@ Gabor filter parameters:
 
 ### Code
 
-`create_clahe.py`: it allows to create all CLAHE images from the TIFF image dataset.
-		 
-	- Set the "path" variable to choose the path where TIFF images are saved.
-
 `create_mask.py`: it allows to select the area of the gland by hand and generate the relative mask.
 		 
 	- Set the "isUpperGland" variable to True if you want to create masks for the upper glands, False otherwise.
@@ -109,7 +105,7 @@ It includes the following files:
 	
 * `balance_dataset.py`: it contains the function that allows to balance the dataset.
 
-* `folder_operations.py`: it contains the functions that allow to create CLAHE images from TIFF images (dataset), create the masks from generated CLAHE and read masks from the folders.
+* `folder_operations.py`: it contains the functions that allow to read the masks and images from the folders and create the masks.
 
 * `gabor.py`: it contains the functions that allow to create gabor kernels and apply filters to the images.
 

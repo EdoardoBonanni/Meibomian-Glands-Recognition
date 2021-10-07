@@ -18,9 +18,9 @@ def main():
             segmentedImage, segments = superpixel.createSuperpixelWithMask(clahe_images[i], n_segments)
             mask = superpixel.selectPoint(segmentedImage, segments)
             if isUpperGland:
-                matrix.create_matrix_mask(mask, "Masks/Lower Gland/mask_" + filenames[i])
-            else:
                 matrix.create_matrix_mask(mask, "Masks/Upper Gland/mask_" + filenames[i])
+            else:
+                matrix.create_matrix_mask(mask, "Masks/Lower Gland/mask_" + filenames[i])
 
     if create_mask_image:
         if isUpperGland:
