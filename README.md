@@ -91,7 +91,7 @@ Gabor filter parameters:
 	
 	- Modify the name of the log file according to the prediction obtained.
 	
-`predict_refactor.py`: function that allows to predict the glands' area of a requested image and it generates as output the predicted image and the relative mask.
+`predict_refactor.py`: function that allows to predict the glands' area of a requested image (only one image!) and it generates as output the predicted image and the relative mask.
 
 	- Set the "selectGPU" variable according to the GPU to be used.
 	
